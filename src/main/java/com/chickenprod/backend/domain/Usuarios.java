@@ -57,4 +57,8 @@ public class Usuarios {
 	@OneToMany(fetch = FetchType.LAZY, mappedBy = "usuarios")
 	private List<RegistroEventos> registroEventos;
 
+	//@JsonIgnore
+	@OneToMany(fetch = FetchType.LAZY, mappedBy = "usuarios")
+	private List<ConfiguracionesUsuario> configuracionesUsuario;
+
 }

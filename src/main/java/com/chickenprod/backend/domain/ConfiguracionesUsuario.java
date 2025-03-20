@@ -2,8 +2,12 @@ package com.chickenprod.backend.domain;
 
 import java.sql.Timestamp;
 
+import org.hibernate.annotations.CreationTimestamp;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
 import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -23,10 +27,10 @@ import lombok.Setter;
 @Table(name = "registro_eventos")
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
 @NoArgsConstructor
-public class RegistroEventos {
+public class ConfiguracionesUsuario {
 	@Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "evento_id")
+	@Column(name = "configuracion_id")
 	@EqualsAndHashCode.Include
 	private Long id;
 
@@ -35,9 +39,14 @@ public class RegistroEventos {
 	@JoinColumn(name = "usuario_id")
 	private Usuarios usuarios;
 
-	@Column(name = "descripcion")
-	private String descripcion;
+	@Column(name = "notificaciones")
+	private int notificaciones;
 
-	@Column(name = "fehca")
-	private Timestamp fecha;
+	@Column(name = "tema", length = 50)
+	private String tema;
+
+
+
+
+
 }
