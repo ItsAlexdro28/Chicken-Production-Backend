@@ -48,10 +48,7 @@ public class Usuarios {
 	@CreationTimestamp
 	private Timestamp fecha_creacion;
 
-	// TODO MANY to ONE relationships (configuraciones_usuarios, registro_eventos, analisis_alertas)
-	//@JsonIgnore
-	//@OneToMany(fetch = FetchType.LAZY, mappedBy = "service")
-	//private List<ServiceApproval> serviceApprovalList;
+	// TODO Json ignore pom.xml -> import com.fasterxml.jackson.annotation.JsonIgnore;
 
 	//@JsonIgnore
 	@OneToMany(fetch = FetchType.LAZY, mappedBy = "usuarios")
@@ -60,5 +57,9 @@ public class Usuarios {
 	//@JsonIgnore
 	@OneToMany(fetch = FetchType.LAZY, mappedBy = "usuarios")
 	private List<ConfiguracionesUsuario> configuracionesUsuario;
+
+	//@JsonIgnore
+	@OneToMany(fetch = FetchType.LAZY, mappedBy = "usuarios")
+	private List<AnalisisAlertas> analisisAlertas;
 
 }
