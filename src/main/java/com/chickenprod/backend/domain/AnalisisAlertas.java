@@ -1,6 +1,7 @@
 package com.chickenprod.backend.domain;
 
 import java.sql.Timestamp;
+import java.util.List;
 
 import org.hibernate.annotations.CreationTimestamp;
 
@@ -15,6 +16,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.MapsId;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
@@ -24,7 +26,7 @@ import lombok.Setter;
 @Setter
 @Getter
 @Entity
-@Table(name = "usuarios")
+@Table(name = "analisis_alerta")
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
 @NoArgsConstructor
 public class AnalisisAlertas {
@@ -47,5 +49,9 @@ public class AnalisisAlertas {
 
 	@Column(name = "descripcion")
 	private String descripcion;
+
+	//@JsonIgnore
+	@OneToMany (fetch = FetchType.LAZY, mappedBy = "analisis_alerta")
+	private List<ReportesProduccion> reportesProduccion;
 }
 
