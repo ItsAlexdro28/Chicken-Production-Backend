@@ -5,7 +5,7 @@ import java.util.Optional;
 
 import com.chickenprod.backend.domain.Gallina;
 
-public interface GallinasService {
+public interface GallinaService {
     public List<Gallina> findAll();
     public Gallina save(Gallina gallina); 
     public Optional<Gallina> findById(Long id);
