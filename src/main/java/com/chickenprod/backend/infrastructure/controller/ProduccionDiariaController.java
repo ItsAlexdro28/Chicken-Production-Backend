@@ -23,7 +23,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.PutMapping;
 
-@RequestMapping("api/services")
+@RequestMapping("api/produccion-diaria")
 @RestController
 public class ProduccionDiariaController {
 

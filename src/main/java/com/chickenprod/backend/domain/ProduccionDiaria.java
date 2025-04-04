@@ -9,6 +9,7 @@ import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
@@ -30,7 +31,9 @@ public class ProduccionDiaria {
 	@EqualsAndHashCode.Include
 	private Long id;
 
-	@ManyToOne
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "gallina_id")
+	private Gallina gallina;
 
 	@Column(name = "fecha")
 	private Date fecha;
@@ -38,7 +41,8 @@ public class ProduccionDiaria {
 	@Column(name = "cantidad")
 	private int cantidad;
 
-	@OneToMany (fetch = FetchType.LAZY, mappedBy = "produccion_diaria")
+	//@JsonIgnore
+	@OneToMany (fetch = FetchType.LAZY, mappedBy = "produccionDiaria")
 	private List<ReportesProduccion> reportesProduccion;
 
 }

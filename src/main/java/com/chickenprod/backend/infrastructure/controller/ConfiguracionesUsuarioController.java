@@ -11,7 +11,7 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.chickenprod.backend.application.ConfiguracionesUsuariosService;
+import com.chickenprod.backend.application.ConfiguracionesUsuarioService;
 import com.chickenprod.backend.domain.ConfiguracionesUsuario;
 
 import jakarta.validation.Valid;
@@ -23,12 +23,12 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.PutMapping;
 
-@RequestMapping("api/services")
+@RequestMapping("api/configuraciones-usuario")
 @RestController
 public class ConfiguracionesUsuarioController {
 
     @Autowired
-    private ConfiguracionesUsuariosService configuracionesUsuario;
+    private ConfiguracionesUsuarioService configuracionesUsuario;
 
     @GetMapping
     public List<ConfiguracionesUsuario> findAll() {

@@ -3,8 +3,8 @@ package com.chickenprod.backend.infrastructure.repository;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import com.chickenprod.backend.domain.ProduccionDiaria;
+import com.chickenprod.backend.domain.Grupo;
 
 @Repository
-public interface ProduccionDiariaController extends JpaRepository<ProduccionDiaria, Long> {  
+public interface GrupoRepository extends JpaRepository<Grupo, Long> {  
 }

@@ -42,10 +42,10 @@ public class Grupo {
     private Date fechaCreacion;
 
 	//@JsonIgnore
-	@OneToMany(fetch = FetchType.LAZY, mappedBy = "grupos")
+	@OneToMany(fetch = FetchType.LAZY, mappedBy = "grupo")
 	private List<Gallina> gallina;
 
 	//@JsonIgnore
-	@OneToMany(fetch = FetchType.LAZY, mappedBy = "gallina")
+	@OneToMany(fetch = FetchType.LAZY, mappedBy = "grupo")
 	private List<ResumenProduccion> resumenProduccion;
 }

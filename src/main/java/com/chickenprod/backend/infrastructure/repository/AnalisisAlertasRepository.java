@@ -6,5 +6,5 @@ import org.springframework.stereotype.Repository;
 import com.chickenprod.backend.domain.AnalisisAlertas;
 
 @Repository
-public interface AnalisisAlertasController extends JpaRepository<AnalisisAlertas, Long> {  
+public interface AnalisisAlertasRepository extends JpaRepository<AnalisisAlertas, Long> {  
 }

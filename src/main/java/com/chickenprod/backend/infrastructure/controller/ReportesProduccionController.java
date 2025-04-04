@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.chickenprod.backend.application.ReportesProduccionService;
 import com.chickenprod.backend.domain.ReportesProduccion;
+import com.chickenprod.backend.domain.ReportesProduccionId;
 
 import jakarta.validation.Valid;
 
@@ -23,7 +24,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.PutMapping;
 
-@RequestMapping("api/services")
+@RequestMapping("api/reportes-produccion")
 @RestController
 public class ReportesProduccionController {
 
@@ -36,14 +37,14 @@ public class ReportesProduccionController {
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<?> findById(@PathVariable Long id) {
+    public ResponseEntity<?> findById(@PathVariable ReportesProduccionId id) {
         return reportesProduccion.findById(id)
                 .map(response -> ResponseEntity.ok(response))
                 .orElseGet(() -> ResponseEntity.notFound().build());
     }
 
     @PostMapping
-    public ResponseEntity<?> save(@PathVariable Long id, @Valid @RequestBody ReportesProduccion newReportesProduccion,
+    public ResponseEntity<?> save(@PathVariable ReportesProduccionId id, @Valid @RequestBody ReportesProduccion newReportesProduccion,
             BindingResult bindingResult) {
         return bindingResult.hasFieldErrors()
                 ? validation(bindingResult)
@@ -51,7 +52,7 @@ public class ReportesProduccionController {
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<?> update(@PathVariable Long id, @Valid @RequestBody ReportesProduccion newReportesProduccion,
+    public ResponseEntity<?> update(@PathVariable ReportesProduccionId id, @Valid @RequestBody ReportesProduccion newReportesProduccion,
             BindingResult bindingResult) {
         return bindingResult.hasFieldErrors()
                 ? validation(bindingResult)
@@ -61,7 +62,7 @@ public class ReportesProduccionController {
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<?> delete(@PathVariable Long id) {
+    public ResponseEntity<?> delete(@PathVariable ReportesProduccionId id) {
         return reportesProduccion.delete(id)
                 .map(response -> ResponseEntity.ok(response))
                 .orElseGet(() -> ResponseEntity.notFound().build());

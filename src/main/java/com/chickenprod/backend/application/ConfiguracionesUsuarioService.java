@@ -5,7 +5,7 @@ import java.util.Optional;
 
 import com.chickenprod.backend.domain.ConfiguracionesUsuario;
 
-public interface ConfiguracionesUsuariosService {
+public interface ConfiguracionesUsuarioService {
     public List<ConfiguracionesUsuario> findAll();
     public ConfiguracionesUsuario save(ConfiguracionesUsuario configuracionesUsuario); 
     public Optional<ConfiguracionesUsuario> findById(Long id);

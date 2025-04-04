@@ -30,7 +30,7 @@ public class ConfiguracionesUsuario {
 	private Long id;
 
 	@ManyToOne(fetch = FetchType.LAZY)
-	@MapsId("usuarioId")
+	@MapsId("id")
 	@JoinColumn(name = "usuario_id")
 	private Usuarios usuarios;
 

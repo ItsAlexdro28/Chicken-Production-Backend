@@ -37,7 +37,7 @@ public class AnalisisAlertas {
 	private Long id;
 
 	@ManyToOne(fetch = FetchType.LAZY)
-	@MapsId("usuarioId")
+	@MapsId("id")
 	@JoinColumn(name = "usuario_id")
 	private Usuarios usuarios;
 
@@ -51,7 +51,7 @@ public class AnalisisAlertas {
 	private String descripcion;
 
 	//@JsonIgnore
-	@OneToMany (fetch = FetchType.LAZY, mappedBy = "analisis_alerta")
+	@OneToMany (fetch = FetchType.LAZY, mappedBy = "analisisAlertas")
 	private List<ReportesProduccion> reportesProduccion;
 }
 

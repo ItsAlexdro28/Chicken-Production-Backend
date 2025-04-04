@@ -26,12 +26,12 @@ public class ReportesProduccion {
 	private ReportesProduccionId id;
 
 	@ManyToOne(fetch = FetchType.LAZY)
-	@MapsId("analisisId")
+	@MapsId("idProduccion")
 	@JoinColumn(name = "analisis_id")
 	private AnalisisAlertas analisisAlertas;
 
 	@ManyToOne(fetch = FetchType.LAZY)
-	@MapsId("produccionId")
+	@MapsId("idAnalisis")
 	@JoinColumn(name = "produccion_id")
 	private ProduccionDiaria produccionDiaria;
 }
