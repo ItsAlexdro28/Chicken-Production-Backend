@@ -5,6 +5,8 @@ import java.util.List;
 
 import org.hibernate.annotations.CreationTimestamp;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
@@ -50,7 +52,7 @@ public class AnalisisAlertas {
 	@Column(name = "descripcion")
 	private String descripcion;
 
-	//@JsonIgnore
+	@JsonIgnore
 	@OneToMany (fetch = FetchType.LAZY, mappedBy = "analisisAlertas")
 	private List<ReportesProduccion> reportesProduccion;
 }

@@ -43,7 +43,7 @@ public class ResumenProduccionController {
     }
 
     @PostMapping
-    public ResponseEntity<?> save(@PathVariable Long id, @Valid @RequestBody ResumenProduccion newResumenProduccion,
+    public ResponseEntity<?> save(@Valid @RequestBody ResumenProduccion newResumenProduccion,
             BindingResult bindingResult) {
         return bindingResult.hasFieldErrors()
                 ? validation(bindingResult)

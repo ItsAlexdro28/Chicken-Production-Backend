@@ -43,7 +43,7 @@ public class ProduccionDiariaController {
     }
 
     @PostMapping
-    public ResponseEntity<?> save(@PathVariable Long id, @Valid @RequestBody ProduccionDiaria newProduccionDiaria,
+    public ResponseEntity<?> save(@Valid @RequestBody ProduccionDiaria newProduccionDiaria,
             BindingResult bindingResult) {
         return bindingResult.hasFieldErrors()
                 ? validation(bindingResult)

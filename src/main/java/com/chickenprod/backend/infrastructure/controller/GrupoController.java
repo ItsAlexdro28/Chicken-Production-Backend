@@ -43,7 +43,7 @@ public class GrupoController {
     }
 
     @PostMapping
-    public ResponseEntity<?> save(@PathVariable Long id, @Valid @RequestBody Grupo newGrupo,
+    public ResponseEntity<?> save(@Valid @RequestBody Grupo newGrupo,
             BindingResult bindingResult) {
         return bindingResult.hasFieldErrors()
                 ? validation(bindingResult)

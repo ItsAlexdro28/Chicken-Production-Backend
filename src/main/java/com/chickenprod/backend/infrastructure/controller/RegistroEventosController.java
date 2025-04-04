@@ -43,7 +43,7 @@ public class RegistroEventosController {
     }
 
     @PostMapping
-    public ResponseEntity<?> save(@PathVariable Long id, @Valid @RequestBody RegistroEventos newRegistroEventos,
+    public ResponseEntity<?> save(@Valid @RequestBody RegistroEventos newRegistroEventos,
             BindingResult bindingResult) {
         return bindingResult.hasFieldErrors()
                 ? validation(bindingResult)

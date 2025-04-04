@@ -43,7 +43,7 @@ public class AnalisisAlertasController {
     }
 
     @PostMapping
-    public ResponseEntity<?> save(@PathVariable Long id, @Valid @RequestBody AnalisisAlertas newAnalisisAlertas,
+    public ResponseEntity<?> save(@Valid @RequestBody AnalisisAlertas newAnalisisAlertas,
             BindingResult bindingResult) {
         return bindingResult.hasFieldErrors()
                 ? validation(bindingResult)

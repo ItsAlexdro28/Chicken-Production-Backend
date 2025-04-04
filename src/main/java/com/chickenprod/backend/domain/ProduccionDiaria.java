@@ -3,6 +3,8 @@ package com.chickenprod.backend.domain;
 import java.sql.Date;
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
@@ -41,7 +43,7 @@ public class ProduccionDiaria {
 	@Column(name = "cantidad")
 	private int cantidad;
 
-	//@JsonIgnore
+	@JsonIgnore
 	@OneToMany (fetch = FetchType.LAZY, mappedBy = "produccionDiaria")
 	private List<ReportesProduccion> reportesProduccion;
 

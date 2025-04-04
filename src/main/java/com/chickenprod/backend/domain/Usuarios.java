@@ -5,6 +5,8 @@ import java.util.List;
 
 import org.hibernate.annotations.CreationTimestamp;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
@@ -48,17 +50,15 @@ public class Usuarios {
 	@CreationTimestamp
 	private Timestamp fecha_creacion;
 
-	// TODO Json ignore pom.xml -> import com.fasterxml.jackson.annotation.JsonIgnore;
-
-	//@JsonIgnore
+	@JsonIgnore
 	@OneToMany(fetch = FetchType.LAZY, mappedBy = "usuarios")
 	private List<RegistroEventos> registroEventos;
 
-	//@JsonIgnore
+	@JsonIgnore
 	@OneToMany(fetch = FetchType.LAZY, mappedBy = "usuarios")
 	private List<ConfiguracionesUsuario> configuracionesUsuario;
 
-	//@JsonIgnore
+	@JsonIgnore
 	@OneToMany(fetch = FetchType.LAZY, mappedBy = "usuarios")
 	private List<AnalisisAlertas> analisisAlertas;
 

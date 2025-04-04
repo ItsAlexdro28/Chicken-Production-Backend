@@ -43,7 +43,7 @@ public class ConfiguracionesUsuarioController {
     }
 
     @PostMapping
-    public ResponseEntity<?> save(@PathVariable Long id, @Valid @RequestBody ConfiguracionesUsuario newConfiguracionesUsuario,
+    public ResponseEntity<?> save(@Valid @RequestBody ConfiguracionesUsuario newConfiguracionesUsuario,
             BindingResult bindingResult) {
         return bindingResult.hasFieldErrors()
                 ? validation(bindingResult)

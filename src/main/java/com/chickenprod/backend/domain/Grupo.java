@@ -3,6 +3,8 @@ package com.chickenprod.backend.domain;
 import java.sql.Date;
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
@@ -41,11 +43,11 @@ public class Grupo {
     @Column(name = "fecha_creacion", nullable = false)
     private Date fechaCreacion;
 
-	//@JsonIgnore
+	@JsonIgnore
 	@OneToMany(fetch = FetchType.LAZY, mappedBy = "grupo")
 	private List<Gallina> gallina;
 
-	//@JsonIgnore
+	@JsonIgnore
 	@OneToMany(fetch = FetchType.LAZY, mappedBy = "grupo")
 	private List<ResumenProduccion> resumenProduccion;
 }

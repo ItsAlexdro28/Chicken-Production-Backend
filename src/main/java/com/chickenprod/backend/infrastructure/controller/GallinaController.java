@@ -43,7 +43,7 @@ public class GallinaController {
     }
 
     @PostMapping
-    public ResponseEntity<?> save(@PathVariable Long id, @Valid @RequestBody Gallina newGallina,
+    public ResponseEntity<?> save(@Valid @RequestBody Gallina newGallina,
             BindingResult bindingResult) {
         return bindingResult.hasFieldErrors()
                 ? validation(bindingResult)

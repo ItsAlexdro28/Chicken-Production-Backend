@@ -3,6 +3,8 @@ package com.chickenprod.backend.domain;
 import java.sql.Date;
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
@@ -47,7 +49,7 @@ public class Gallina {
 	@JoinColumn(name = "grupo_id")
 	private Grupo grupo;
 
-	//@JsonIgnore
+	@JsonIgnore
 	@OneToMany(fetch = FetchType.LAZY, mappedBy = "gallina")
 	private List<ProduccionDiaria> produccionDiaria;
 
