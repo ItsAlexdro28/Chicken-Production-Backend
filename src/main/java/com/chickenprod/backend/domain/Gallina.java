@@ -4,6 +4,7 @@ import java.sql.Date;
 import java.util.List;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.chickenprod.backend.domain.Grupo;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;

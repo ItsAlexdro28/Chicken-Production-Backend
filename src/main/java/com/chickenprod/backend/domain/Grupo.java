@@ -50,4 +50,30 @@ public class Grupo {
 	@JsonIgnore
 	@OneToMany(fetch = FetchType.LAZY, mappedBy = "grupo")
 	private List<ResumenProduccion> resumenProduccion;
+
+	public void setId(Integer id) {
+		this.id = id;
+	}
+
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
+
+	public void setDescripcion(String descripcion) {
+		this.descripcion = descripcion;
+	}
+
+	public void setFechaCreacion(Date fechaCreacion) {
+		this.fechaCreacion = fechaCreacion;
+	}
+
+	public void setGallina(List<Gallina> gallina) {
+		this.gallina = gallina;
+	}
+
+	public void setResumenProduccion(List<ResumenProduccion> resumenProduccion) {
+		this.resumenProduccion = resumenProduccion;
+	}
+
+
 }
