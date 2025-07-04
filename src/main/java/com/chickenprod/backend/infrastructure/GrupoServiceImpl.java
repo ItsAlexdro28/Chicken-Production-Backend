@@ -54,14 +54,14 @@ public class GrupoServiceImpl implements GrupoService {
         return Optional.empty();
     }
 
-    @Override
-    @Transactional
-    public Optional<Grupo> delete(Long id) {
-        Optional<Grupo> grupoInstance = this.findById(id);
-        if (grupoInstance.isPresent()) {
-            grupoInstance.orElseThrow();
-            return Optional.of(repository.save(grupoInstance.orElseThrow()));
-        }
-        return Optional.empty();
-    }
+	@Override
+	@Transactional
+	public Optional<Grupo> delete(Long id) {
+	    Optional<Grupo> grupoInstance = this.findById(id);
+	    if (grupoInstance.isPresent()) {
+	        repository.delete(grupoInstance.get());
+	        return grupoInstance;
+	    }
+	    return Optional.empty();
+	}
 }
